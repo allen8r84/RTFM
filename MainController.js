@@ -1,10 +1,10 @@
 var app = angular.module('rtfmApp');
 
 app.controller('rtfmAppController', function($scope, $window, $firebaseArray, $firebaseObject) {
-     var messages = $firebaseArray(new Firebase("https://jba-rtf.firebaseio.com/pickleApp/messages"));
-     var favoriteNumber = $firebaseArray(new Firebase("https://jba-rtf.firebaseio.com/pickleApp/user/favoriteNumber"));
+     var messages = $firebaseArray(new Firebase("https://jba-rtf.firebaseio.com/rtfmApp/messages"));
+     var favoriteNumber = $firebaseArray(new Firebase("https://jba-rtf.firebaseio.com/rtfmApp/user/favoriteNumber"));
      var moment = $window.moment; // for createAt with current time
-     var user = $firebaseObject(new Firebase("https://jba-rtf.firebaseio.com/pickleApp/user"));
+     var user = $firebaseObject(new Firebase("https://jba-rtf.firebaseio.com/rtfmApp/user"));
      
      $scope.messages = messages; //angularFire API
      user.$bindTo($scope, 'user');
