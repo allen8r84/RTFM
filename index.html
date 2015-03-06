@@ -1,0 +1,43 @@
+<DOCTYPE html>
+<html ng-app="rtfmApp">
+    <head>
+    	<title>Mini Project Chat</title>
+        <link href="main.css" rel="stylesheet"/>
+    </head>
+    <body ng-controller="rtfmAppController">
+        <div>
+            <div>
+                <form name="userForm">
+                    <input type="text" ng-model="user.username" required placeholder="name"></input>
+                    <select ng-model="user.type">
+                        <option value="">Chose One!</optionval>
+                        <option value="Mild">Mild</optionval>
+                        <option value="Spicy">Spicy</optionval>
+                    </select>
+                    <input type="number" ng-model="user.favoriteNumber" placeholder="favorite Number"></input>
+                </form>
+                <hr />
+                <form name="newChatForm">
+                    
+                    <input type="text" ng-model="text" required placeholder="text"></input>
+                    
+                    <button ng-click="addChat(username, text)" ng-disabled="newChatForm.$invalid || !user.username">Submit</button>
+                </form>
+                <ul>
+                    <li ng-repeat="message in messages">
+                        <button ng-click="deleteMessage(message)">delete</button>
+                        {{message.username}}: {{message.text}}: ~<em>{{message.createdAt}}</em>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    
+    
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular.min.js"></script>
+    <script src="https://cdn.firebase.com/js/client/2.2.2/firebase.js"></script>
+    <script src="https://cdn.firebase.com/libs/angularfire/1.0.0/angularfire.min.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.min.js"></script>
+    <script src="app.js"></script>
+    <script src="MainController.js"></script>
+    </body>
+</html>
