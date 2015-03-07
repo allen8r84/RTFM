@@ -6,14 +6,14 @@ app.config(function($routeProvider){
         templateUrl: 'login/loginView.html',
         controller: 'loginController'
     })
-/*    .when('/threads', {
-        templateUrl: '',
-        controller: ''
+    .when('/threads', {
+        templateUrl: 'threads/threadsView.html',
+        controller: 'threadsController'
     })
     .when('threads/:threadId', {
         templateUrl: '',
         controller: ''
-    })*/
+    })
     .otherwise({
         redirectTo: '/login'
     });
