@@ -3,19 +3,16 @@ var app = angular.module('rtfmApp', ['firebase', 'ngRoute']);
 app.config(function($routeProvider){
     $routeProvider
     .when('/login', {
-        templateUrl: '',
-        controller: '',
-        resolve: {}
+        templateUrl: 'login/loginView.html',
+        controller: 'loginController'
     })
     .when('/threads', {
         templateUrl: '',
-        controller: '',
-        resolve: {}
+        controller: ''
     })
     .when('threads/:threadId', {
         templateUrl: '',
-        controller: '',
-        resolve: {}
+        controller: ''
     })
     .otherwise({
         redirectTo: '/login'

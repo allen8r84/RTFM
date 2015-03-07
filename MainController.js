@@ -1,4 +1,4 @@
-var app = angular.module('rtfmApp');
+/*var app = angular.module('rtfmApp');
 
 app.controller('rtfmAppController', function($scope, $window, $firebaseArray, $firebaseObject) {
      var messages = $firebaseArray(new Firebase("https://jba-rtf.firebaseio.com/rtfmApp/messages"));
@@ -21,4 +21,4 @@ app.controller('rtfmAppController', function($scope, $window, $firebaseArray, $f
      $scope.deleteMessage = function(message) {
          $scope.messages.$remove(message);
      }
-});
+});*/
