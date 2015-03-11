@@ -21,6 +21,9 @@ app.config(function($routeProvider){
         resolve: {
             thread: function(threadService, $route){
                    return threadService.getThread($route.current.params.threadId);
+            },
+            comments: function(threadService, $route){
+                    return threadService.getComments($route.current.params.threadId);
             }
         }
     })
