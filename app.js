@@ -15,9 +15,14 @@ app.config(function($routeProvider){
             }
         }
     })
-    .when('threads/:threadId', {
-        templateUrl: '',
-        controller: ''
+    .when('/thread/:threadId', {
+        templateUrl: 'thread/thread.html',
+        controller: 'ThreadCtrl',
+        resolve: {
+            thread: function(threadService, $route){
+                   return threadService.getThread($route.current.params.threadId);
+            }
+        }
     })
     .otherwise({
         redirectTo: '/login'
